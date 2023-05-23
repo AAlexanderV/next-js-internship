@@ -1,9 +1,9 @@
+import { FC } from "react";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 
-// import type { Component } from "next/app";
-
-export const Layout = ({ children }: any) => {
+// export const Layout: FC<{ children: FC }> = ({ children }) => {
+export const Layout: FC<any> = ({ children }) => {
   return (
     <>
       <Header />

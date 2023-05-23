@@ -1,16 +1,14 @@
+// import { FC } from "react";
+import { NextPage } from "next";
 import { SearchWidget } from "../../components/SearchWidget";
 import { UsersList } from "../../components/UsersList";
 import { Pagination } from "../../components/Pagination";
 
-import { PageData, IParams } from "../../../types";
-import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
+import { UsersPageProps } from "../../types";
+import type { GetServerSideProps } from "next";
 
-export const getServerSideProps: GetServerSideProps<{
-  pageData: PageData;
-  currentPage: number;
-}> = async (context) => {
-  const { id } = context.params as IParams;
-  // const { id } = context.query; //????
+export const getServerSideProps: GetServerSideProps<UsersPageProps> = async (context) => {
+  const { id } = context.query;
 
   const response = await fetch(
     `https://dummyjson.com/users?limit=10&skip=${(Number(id) - 1) * 10}`
@@ -20,10 +18,7 @@ export const getServerSideProps: GetServerSideProps<{
   return { props: { pageData, currentPage: Number(id) } };
 };
 
-const UsersPage = ({
-  pageData,
-  currentPage,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const UsersPage: NextPage<UsersPageProps> = ({ pageData, currentPage }) => {
   return (
     <>
       <SearchWidget />

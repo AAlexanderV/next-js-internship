@@ -1,16 +1,15 @@
-import { ParsedUrlQuery } from "querystring";
-export interface IParams extends ParsedUrlQuery {
-  id: string;
-}
-
 export type User = {
   id: number;
   firstName: string;
   lastName: string;
   gender: string;
-  address: { address: string; city: string };
+  address: Address;
   image: string;
 };
+
+export type Address = { address: string; city: string };
+
+export type UsersArray = User[];
 
 export type PageData = {
   users: User[];
@@ -19,19 +18,9 @@ export type PageData = {
   limit: number;
 };
 
-export type SuggestedUserItemProps = {
-  fullName: string;
-  id: number;
-  image: string;
-  removeSuggestions: Function;
-};
-
-export type UserCardProps = {
-  id: number;
-  firstName: string;
-  lastName: string;
-  gender: string;
-  image: string;
+export type UsersPageProps = {
+  pageData: PageData;
+  currentPage: number;
 };
 
 export type PaginationProps = {

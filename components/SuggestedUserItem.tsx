@@ -1,24 +1,20 @@
 import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { SuggestedUserItemProps } from "../../types";
+import { User } from "../types";
 
 import styles from "@/styles/SearchWidget.module.scss";
 
-export const SuggestedUserItem: FC<SuggestedUserItemProps> = ({
-  fullName,
-  id,
-  image,
-  removeSuggestions,
-}: SuggestedUserItemProps) => {
+export const SuggestedUserItem: FC<{ user: User }> = ({ user }) => {
+  const fullName = user.firstName + " " + user.lastName;
+
   return (
     <Link
-      href={"/user/" + id}
+      href={"/user/" + user.id}
       className={styles.suggested_user_item}
-      onClick={() => removeSuggestions()}
     >
       <Image
-        src={image}
+        src={user.image}
         width={30}
         height={30}
         alt={fullName}
