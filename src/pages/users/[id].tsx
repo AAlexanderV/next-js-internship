@@ -1,15 +1,13 @@
-// import Image from "next/image";
-import styles from "@/styles/Home.module.css";
 import { SearchWidget } from "../../components/SearchWidget";
 import { UsersList } from "../../components/UsersList";
-import { UserItem } from "../../components/UserItem";
+import { Pagination } from "../../components/Pagination";
 
-import { User, PageData, IParams } from "../../../types";
-
+import { PageData, IParams } from "../../../types";
 import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
 
 export const getServerSideProps: GetServerSideProps<{
   pageData: PageData;
+  currentPage: number;
 }> = async (context) => {
   const { id } = context.params as IParams;
   // const { id } = context.query; //????
@@ -19,18 +17,23 @@ export const getServerSideProps: GetServerSideProps<{
   );
   const pageData = await response.json();
 
-  return { props: { pageData } };
+  return { props: { pageData, currentPage: Number(id) } };
 };
 
-//
-////
-//
-
-const UsersPage = ({ pageData }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const UsersPage = ({
+  pageData,
+  currentPage,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <>
       <SearchWidget />
+
       <UsersList users={pageData.users} />
+
+      <Pagination
+        pagesTotal={pageData.total / pageData.limit}
+        currentPage={currentPage}
+      />
     </>
   );
 };

@@ -1,19 +1,19 @@
 import { FC } from "react";
+import styles from "@/styles/UsersPage.module.scss";
 import { User } from "../../types";
-import { UserItem } from "../components/UserItem";
+import { UserCard } from "./UserCard";
 
 export const UsersList: FC<{ users: User[] }> = ({ users }: { users: User[] }) => {
   return (
-    <div className="users_list">
-      <div className="grid_wrapper">
+    <div className={styles.users_list}>
+      <div className={styles.grid_wrapper}>
         {users.map((user) => {
           return (
-            <UserItem
+            <UserCard
               id={user.id}
               firstName={user.firstName}
               lastName={user.lastName}
               gender={user.gender}
-              address={user.address.address + ", " + user.address.city}
               image={user.image}
               key={user.id}
             />

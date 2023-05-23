@@ -1,0 +1,22 @@
+.back_section {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+
+  .back_btn {
+    margin-top: 10px;
+    margin-left: 54px;
+    background-color: #fff;
+    border: none;
+    font-weight: 700;
+    font-size: 18px;
+    font-family: "Karla", sans-serif;
+    cursor: pointer;
+
+    .arrow {
+      font-weight: 800;
+      font-size: 40px;
+      margin-right: 12px;
+    }
+  }
+}

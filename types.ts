@@ -18,3 +18,23 @@ export type PageData = {
   skip: number;
   limit: number;
 };
+
+export type SuggestedUserItemProps = {
+  fullName: string;
+  id: number;
+  image: string;
+  removeSuggestions: Function;
+};
+
+export type UserCardProps = {
+  id: number;
+  firstName: string;
+  lastName: string;
+  gender: string;
+  image: string;
+};
+
+export type PaginationProps = {
+  pagesTotal: number;
+  currentPage: number;
+};

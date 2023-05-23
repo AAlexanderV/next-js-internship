@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 100px;
+
+  h3 {
+    font-weight: 400;
+  }
+
+  a {
+    padding: 30px;
+    background-color: #02c8ff;
+    border-radius: 3px;
+    transition: all linear 0.2s;
+
+    font-weight: 700;
+    font-size: 24px;
+
+    &:hover {
+      background-color: #02c8ff79;
+    }
+  }
+}

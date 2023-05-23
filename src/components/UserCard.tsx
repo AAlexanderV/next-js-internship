@@ -1,25 +1,12 @@
-// import { FC } from "react";
+import styles from "@/styles/UsersPage.module.scss";
 import Image from "next/image";
 import Link from "next/link";
+import { UserCardProps } from "../../types";
 
-export const UserItem = ({
-  id,
-  firstName,
-  lastName,
-  gender,
-  address,
-  image,
-}: {
-  id: number;
-  firstName: string;
-  lastName: string;
-  gender: string;
-  address: string;
-  image: string;
-}) => {
+export const UserCard = ({ id, firstName, lastName, image }: UserCardProps) => {
   return (
     <Link href={"/user/" + id}>
-      <div className="user_item">
+      <div className={styles.user_item}>
         <div className="user_img">
           <Image
             src={image}
@@ -29,10 +16,8 @@ export const UserItem = ({
           />
         </div>
 
-        <div className="user_details">
+        <div className={styles.user_details}>
           <h3>{firstName + " " + lastName}</h3>
-          <p>Gender: {gender}</p>
-          <p>Address: {address}</p>
         </div>
       </div>
     </Link>
