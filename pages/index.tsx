@@ -1,8 +1,8 @@
-// import { FC } from "react";
-import { NextPage } from "next";
+// import { NextPage } from "next";
+import { FC } from "react";
 import { Home } from "../components/Home";
 
-const HomePage: NextPage = () => {
+const HomePage: FC = () => {
   return <Home />;
 };
 

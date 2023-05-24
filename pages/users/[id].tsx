@@ -1,9 +1,8 @@
-// import { FC } from "react";
-import { NextPage } from "next";
+// import { NextPage } from "next";
+import { FC } from "react";
 import { SearchWidget } from "../../components/SearchWidget";
 import { UsersList } from "../../components/UsersList";
 import { Pagination } from "../../components/Pagination";
-
 import { UsersPageProps } from "../../types";
 import type { GetServerSideProps } from "next";
 
@@ -18,7 +17,7 @@ export const getServerSideProps: GetServerSideProps<UsersPageProps> = async (con
   return { props: { pageData, currentPage: Number(id) } };
 };
 
-const UsersPage: NextPage<UsersPageProps> = ({ pageData, currentPage }) => {
+const UsersPage: FC<UsersPageProps> = ({ pageData, currentPage }) => {
   return (
     <>
       <SearchWidget />

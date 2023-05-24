@@ -1,5 +1,5 @@
-// import { FC } from "react";
-import { NextPage } from "next";
+// import { NextPage } from "next";
+import { FC } from "react";
 import { BackButton } from "../../components/BackButton";
 import { UserDetails } from "../../components/UserDetails";
 import type { GetServerSideProps } from "next";
@@ -14,7 +14,7 @@ export const getServerSideProps: GetServerSideProps<{ user: User }> = async (con
   return { props: { user } };
 };
 
-const UserPage: NextPage<{ user: User }> = ({ user }) => {
+const UserPage: FC<{ user: User }> = ({ user }) => {
   return (
     <>
       <BackButton />
