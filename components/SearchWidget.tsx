@@ -1,10 +1,9 @@
 "use client";
-import styles from "@/styles/SearchWidget.module.scss";
-import { useState, useEffect } from "react";
-import { FC } from "react";
+
+import { FC, useEffect, useState } from "react";
 import { User } from "../types";
+import { svgSearchPath } from "../utils/svgPaths";
 import { SuggestedUserItem } from "./SuggestedUserItem";
-import { svgSearchPath } from "../utils/svgSearchPath";
 
 export const SearchWidget: FC = () => {
   const [users, setUsers] = useState<User[]>([]);
@@ -27,16 +26,19 @@ export const SearchWidget: FC = () => {
   }, [searchName]);
 
   return (
-    <div className={styles.search}>
-      <div className={styles.input_box}>
+    <div className="w-full flex items-center justify-center relative">
+      <div className="w-3/5 max-w-xl min-w-[200px] h-14 mt-8 flex flex-row content-start items-center bg-white border border-gray-400 rounded-lg">
         <label htmlFor="search">
-          <svg className={styles.search_svg}>
-            <path d={svgSearchPath} />
+          <svg className="h-4 w-4 mt-1 mr-1.5 mb-0 ml-5 fill-gray-400">
+            <path
+              d={svgSearchPath}
+              stroke="grey"
+            />
           </svg>
         </label>
 
         <input
-          className={styles.search_input}
+          className="w-full h-14 border-none bg-transparent ml-2 text-gray-500 text-lg font-normal"
           type="text"
           id="search"
           value={searchName}
@@ -45,15 +47,13 @@ export const SearchWidget: FC = () => {
         ></input>
       </div>
 
-      <div className={styles.suggested_users}>
-        {users.map((user) => {
-          return (
-            <SuggestedUserItem
-              key={user.id}
-              user={user}
-            />
-          );
-        })}
+      <div className="absolute top-[90px] w-3/5 max-w-[600px] min-w-[200px] z-10 bg-white">
+        {users.map((user) => (
+          <SuggestedUserItem
+            key={user.id}
+            user={user}
+          />
+        ))}
       </div>
     </div>
   );

@@ -1,10 +1,10 @@
-import { FC } from "react";
 import styles from "@/styles/UsersPage.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import { User } from "../types";
+import { FC } from "react";
+import { UserCardProps } from "../types";
 
-export const UserCard: FC<{ user: User }> = ({ user }) => {
+export const UserCard: FC<UserCardProps> = ({ user }) => {
   const fullName = user.firstName + " " + user.lastName;
 
   return (

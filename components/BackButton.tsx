@@ -1,20 +1,20 @@
-import styles from "@/styles/BackButton.module.scss";
 import Link from "next/link";
+import { svgArrow } from "../utils/svgPaths";
 
 export const BackButton = () => {
   return (
-    <div className={styles.back_section}>
+    <div>
       <Link
         href="/users/1"
-        className={styles.back_btn}
+        className="mt-10 ml-14 bg-white font-bold flex flex-row"
       >
-        <span className={styles.arrow}>
+        <span className="mr-3 flex items-center">
           <svg
             width="16"
             height="16"
           >
             <path
-              d="M16 7H3.83L9.42 1.41L8 0L0 8L8 16L9.41 14.59L3.83 9H16V7Z"
+              d={svgArrow}
               fill="black"
             />
           </svg>

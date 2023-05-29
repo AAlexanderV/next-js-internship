@@ -1,27 +1,7 @@
 .container {
-  width: 100%;
-  min-height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 100px;
+  @apply w-full flex flex-col justify-around items-center mt-24;
+}
 
-  h3 {
-    font-weight: 400;
-  }
-
-  a {
-    padding: 30px;
-    background-color: #02c8ff;
-    border-radius: 3px;
-    transition: all linear 0.2s;
-
-    font-weight: 700;
-    font-size: 24px;
-
-    &:hover {
-      background-color: #02c8ff79;
-    }
-  }
+.btn {
+  @apply p-9 bg-light_blue rounded hover:bg-opacity-50 transition-colors duration-200 ease-linear font-bold text-2xl;
 }

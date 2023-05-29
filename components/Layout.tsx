@@ -1,9 +1,8 @@
-import { FC } from "react";
-import { Header } from "./Header";
+import { FC, ReactNode } from "react";
 import { Footer } from "./Footer";
+import { Header } from "./Header";
 
-// export const Layout: FC<{ children: FC }> = ({ children }) => {
-export const Layout: FC<any> = ({ children }) => {
+export const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <>
       <Header />

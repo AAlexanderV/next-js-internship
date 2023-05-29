@@ -9,7 +9,21 @@ export type User = {
 
 export type Address = { address: string; city: string };
 
-export type UsersArray = User[];
+export type SuggestedUserItemProps = {
+  user: User;
+};
+
+export type UserProps = {
+  user: User;
+};
+
+export type UserPageProps = UserProps;
+export type UserCardProps = UserProps;
+export type UserDetailsProps = UserProps;
+
+export type UsersListProps = {
+  users: User[];
+};
 
 export type PageData = {
   users: User[];

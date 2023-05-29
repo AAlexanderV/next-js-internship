@@ -1,4 +1,3 @@
-// import { NextPage } from "next";
 import { FC } from "react";
 import { SearchWidget } from "../../components/SearchWidget";
 import { UsersList } from "../../components/UsersList";

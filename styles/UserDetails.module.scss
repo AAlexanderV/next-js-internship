@@ -1,39 +1,11 @@
-.user_container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+.user_info h2 {
+  @apply mb-8 text-center text-3xl;
+}
 
-  margin-top: 100px;
+.user_info p {
+  @apply mb-2;
+}
 
-  .user_item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    .user_avatar {
-      margin-bottom: 40px;
-      img {
-        border-radius: 50%;
-        border: 1px solid #d3d3d3;
-      }
-    }
-
-    .user_info {
-      h2 {
-        text-align: center;
-        margin-bottom: 30px;
-        font-size: 30px;
-      }
-
-      p {
-        margin-bottom: 8px;
-        span {
-          margin-right: 5px;
-          font-weight: 700;
-          color: #686868;
-        }
-      }
-    }
-  }
+.user_info p span {
+  @apply mr-1.5 font-bold text-gray-400;
 }
