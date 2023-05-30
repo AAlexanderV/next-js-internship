@@ -1,4 +1,3 @@
-import styles from "../styles/UserDetails.module.scss";
 import Image from "next/image";
 import { FC } from "react";
 import { UserDetailsProps } from "../types";
@@ -20,13 +19,13 @@ export const UserDetails: FC<UserDetailsProps> = ({ user }) => {
           />
         </div>
 
-        <div className={styles.user_info}>
-          <h2>{fullName}</h2>
-          <p>
-            <span>Gender: </span> {user.gender}
+        <div>
+          <h2 className="mb-8 text-center text-3xl">{fullName}</h2>
+          <p className="mb-2">
+            <span className="mr-1.5 font-bold text-gray-400">Gender: </span> {user.gender}
           </p>
-          <p>
-            <span>Address: </span> {address}
+          <p className="mb-2">
+            <span className="mr-1.5 font-bold text-gray-400">Address: </span> {address}
           </p>
         </div>
       </div>

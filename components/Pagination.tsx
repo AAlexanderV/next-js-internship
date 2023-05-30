@@ -11,8 +11,9 @@ export const Pagination: FC<PaginationProps> = ({ pagesTotal, currentPage }) => 
     <div className="w-full flex justify-center items-center mb-12">
       <Link
         href={"/users/" + (currentPage - 1)}
-        className={clsx("mr-1 text-2xl font-extrabold hover:scale-125 transition-all", {
+        className={clsx("mr-1 text-2xl font-extrabold  hover:scale-125 transition-all", {
           "pointer-events-none text-gray-200 ": currentPage <= 1,
+          "text-light_blue": currentPage > 1,
         })}
       >
         &#60;
@@ -51,6 +52,7 @@ export const Pagination: FC<PaginationProps> = ({ pagesTotal, currentPage }) => 
         href={"/users/" + (currentPage + 1)}
         className={clsx("ml-1 text-2xl font-extrabold hover:scale-125 transition-all", {
           "pointer-events-none text-gray-200": currentPage >= pagesTotal,
+          "text-light_blue": currentPage < pagesTotal,
         })}
       >
         &#62;
