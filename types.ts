@@ -1,3 +1,6 @@
+import { ReactNode } from "react";
+export type ComponentChildren = { children: ReactNode };
+
 export type User = {
   id: number;
   firstName: string;
